@@ -3,5 +3,5 @@
 
 include ("ft_split.php");
 
-print_r(ft_split("   1     +    5  "))
+print_r(ft_split("   1     0    5  "))
 ?>

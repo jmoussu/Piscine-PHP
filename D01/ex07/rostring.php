@@ -9,6 +9,8 @@ function ft_split($str)
 if ($argc >= 2)
 {
 	$i = 0;
+	if (!$argv[1])
+		exit();
 	$array1 = ft_split($argv[1]);
 	foreach ($array1 as $key1 => $value1)
 	{
@@ -17,7 +19,7 @@ if ($argc >= 2)
 	}
 	$firstword = $realArray[0];
 	if ($i == 1)
-		echo"$firstword";
+		echo"$firstword\n";
 	else
 	{
 		foreach ($realArray as $key => $value)
@@ -27,7 +29,7 @@ if ($argc >= 2)
 			else
 				echo"$value ";
 		}
-		echo"$firstword";
+		echo"$firstword\n";
 	}
 }
 ?>

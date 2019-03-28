@@ -24,6 +24,13 @@ $str = file_get_contents($argv[1]);
 $Doc = new DOMDocument();
 $implementation = new DOMImplementation();
 
+$ext = pathinfo($argv[1], PATHINFO_EXTENSION);
+if ($ext != "html" && $ext != "xml")
+{
+	echo"$str";
+	exit();
+}
+
 $Doc->loadHTML($str, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
 $rows = $Doc->getElementsByTagName('a');

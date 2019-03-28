@@ -14,13 +14,14 @@ if ($argc == 2)
 	{
 		$count++;
 	}
-
+	$i = 0;
 	foreach ($array as $key => $value)
 	{
-		if ($key == $count)
-			echo"$value";
+		if ($i == $count)
+			echo"$value\n";
 		else
-		echo"$value ";
+			echo"$value ";
+		$i++;
 	}
 }
 ?>

@@ -5,7 +5,10 @@ while(1)
 	echo "Entrez un nombre: ";
 	$in = trim(fgets(STDIN));
 	if (feof(STDIN) == TRUE)
+	{
+		echo"\n";
 		exit();
+	}
 	if (is_numeric($in) == 0)
 	{
 		echo "'$in' n'est pas un chiffre\n";
