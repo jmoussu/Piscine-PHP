@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>balloon</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		div.balloon{
+			height: 200px;
+			width: 200px;
+			border-radius: 1000px;
+			background-color: red;
+		}
+		div.balloon:hover{
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <span onclick="up()" onmouseout="down()" > -->
+		<div id="divx" class=balloon>
+		</div>
+	<!-- </span> -->
+	<script>
+		
+		function up() {
+			var h = document.getElementById("divx").clientHeight;
+			if (document.getElementById("divx").style.backgroundColor == "green")
+				document.getElementById("divx").style.backgroundColor = "blue";
+			else if (document.getElementById("divx").style.backgroundColor == "blue")
+				document.getElementById("divx").style.backgroundColor = "red";
+			else
+				document.getElementById("divx").style.backgroundColor = "green";
+			
+			if (h < 420)
+			{
+				h = h + 10;
+				document.getElementById("divx").style.height = h + "px";
+				document.getElementById("divx").style.width = h + "px";
+			}
+			else
+			{
+				document.getElementById("divx").style.height = "200px";
+				document.getElementById("divx").style.width = "200px";
+			}
+			console.log("out if ");
+		}
+		function down() {
+			var h = document.getElementById("divx").clientHeight;
+			if (document.getElementById("divx").style.backgroundColor == "blue")
+				document.getElementById("divx").style.backgroundColor = "green";
+			else if (document.getElementById("divx").style.backgroundColor == "green")
+				document.getElementById("divx").style.backgroundColor = "red";
+			else
+				document.getElementById("divx").style.backgroundColor = "blue";
+			
+			if (h > 200)
+			{
+				h = h - 5;
+				document.getElementById("divx").style.height = h + "px";
+				document.getElementById("divx").style.width = h + "px";
+			}
+		}
+		document.getElementById("divx").onclick = function(){	up() };
+		document.getElementById("divx").onmouseout = function(){	down() };
+	</script>
+</body>
+</html>

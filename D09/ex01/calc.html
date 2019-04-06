@@ -1,0 +1,107 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CALC</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	</style>
+</head>
+
+<body>
+	<!-- <span onclick="up()" onmouseout="down()" > -->
+		<div id="all">
+				<form id='calc' name="calc" accept-charset='UTF-8'>
+						<input type="text" name="int1" id="int1" value="" placeholder="int > 0" />
+						<select id="op">
+							<option value="+">+</option>
+							<option value="-">-</option>
+							<option value="*">*</option>
+							<option value="/">/</option>
+							<option value="%">%</option>
+						</select>
+						<input type="text" name="int2" id="int2" value="" placeholder="int > 0"/>
+						<input type="submit" value="Try me" onclick="getCalc();" />
+					</form>
+		</div>
+	<!-- </span> -->
+	<script>
+	
+	function getCalc()
+	{
+		var op = document.getElementById("op").value;
+		var i1 = document.getElementById("int1").value;
+		var i2 = document.getElementById("int2").value;
+		if (i1)
+			i1 = Number(i1);
+		if (i2)
+			i2 = Number(i2);
+		if ( !(Number.isInteger(i1)) || !(Number.isInteger(i2)) )
+		{
+			console.log("Error :(");
+			alert("Error :(");
+			return;
+		}
+		if (i1 < 0 || i2 < 0)
+		{
+			console.log("Error :(");
+			alert("Error :(");
+			return;
+		}
+		if ((op == "/" && i2 == 0) || (op == "%" && i2 == 0))
+		{
+			console.log("It’s over 9000");
+			alert("It’s over 9000");
+			return;
+		}
+		if (op == "+")
+		{
+			var res = i1 + i2;
+			console.log(res);
+			alert(res);
+			return;
+		}
+		else if (op == "-")
+		{
+			var res = i1 - i2;
+			console.log(res);
+			alert(res);
+			return;
+		}
+		else if (op == "*")
+		{
+			var res = i1 * i2;
+			console.log(res);
+			alert(res);
+			return;
+		}
+		else if (op == "/")
+		{
+			var res = i1 / i2;
+			console.log(res);
+			alert(res);
+			return;
+		}
+		else if (op == "%")
+		{
+			var res = i1 % i2;
+			console.log(res);
+			alert(res);
+			return;
+		}
+		else
+		{
+			console.log("Error :(");
+			alert("Error :(");
+			return;
+		}
+		alert("fin");
+	}
+	function useMe()
+	{
+		alert("Please, use me...")
+	}
+	setInterval(useMe, 30000);
+	</script>
+</body>
+</html>
