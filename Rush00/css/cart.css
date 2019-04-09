@@ -1,0 +1,16 @@
+table, th, td
+{
+ 	border: 1px solid black;
+}
+#cart {
+	position: absolute;
+	padding: 5px;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	background-color: rgba(114, 143, 60, 0.808);
+	border: 5px solid rgba(72, 197, 0, 0.658);
+	border-style: double;
+	border-radius: 20px;
+	box-shadow: 10px 10px 10px;
+}
